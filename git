@@ -10,3 +10,7 @@ $git pull # Taking the changes from remote repo.
 $git tag -a -m "random v0.1" v0.1 # Adding random version
 $git tag --list #list the version.
 $git push origin tag v0.1 #Pushing tag to remote.
+
+#Bulk adding and removing files
+$git add -v #Adding bluk files in git.
+#git rm -f <FileName> #Removing file.
