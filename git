@@ -1,0 +1,5 @@
+#Basic commands
+
+$git clone <repo-name> #Cloning the repo-name.
+$git log #Check the repo log.
+$git config --global diff.renames copies #detects the changes adn rename. 
