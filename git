@@ -1,5 +1,4 @@
 ###Basic commands
-
 $git clone <repo-name> #Cloning the repo-name.
 $git log #Check the repo log.
 $git config --global diff.renames copies #detects the changes and rename.
@@ -11,6 +10,43 @@ $git tag -a -m "random v0.1" v0.1 # Adding random version
 $git tag --list #list the version.
 $git push origin tag v0.1 #Pushing tag to remote.
 
-#Bulk adding and removing files
+###Bulk adding and removing files
 $git add -v #Adding bluk files in git.
-#git rm -f <FileName> #Removing file.
+$git rm -f <FileName> #Removing file.
+
+###Git revert changes
+$git checkout -- <filename> # revert changes in local file
+
+###Merge
+$git merge-base A B #find merge base
+$git reflog #see the last 30 days commit
+$gitk --all `git reflog | -c1-7` & #see the commits in graphical interface
+
+###traversing the branch
+$git show V0.1^1 #show commit of parent. syntax <version>^<nth parent of revison>
+$git show V0.1~2 #show the commit grand parent eq. to ^1^1
+$git describe #historic version related to branch.
+$git reflog master@{yesterday} # where was the branch upto yesterday.
+$git reflog master@{1} #before one commit
+$git log '<rev>^{/<commit-message>}' # Getting revision by commit message
+$git log 'origin/master^{/changes}'# returns lastest revision details with commit message.
+$git log master # returns log limited to master.
+
+$git log A..B#returns the commit from A to B
+$git log B ^A#returns same as above
+$git log B -- not A# returns same as  above.
+############Left-right#########
+         |<| |<| |A|
+|.||.||.||>| |>| |B|
+###############################
+$git log --oneline --left-right A...B#returns log as per above comment.
+$git diff A B#difference the between two commits A and B
+$git diff A...B#same output as above.
+$git log --after="1.day"
+$git log --after="<Date>"#limiting log with date.
+$git log --author=<author-name>#commits by author name.
+$git log --grep=<Comment>#commits with Comment string.
+$git log -5 --graph --oneline#Graphic versioning of commits.
+$git log --diff-file=AM#sees only added or Renamed files.
+$git log -L <start>,<end>:filename # give information of changes between start and end of given file.
+$git log -- *.sh #gives the history of sh files.
