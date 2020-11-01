@@ -1,0 +1,4 @@
+* Simple storage services offers Object-based datastore. S3 offers unlimited data store without worrying about underlying architechture.
+* Ensures 99.99% Availabilty and 11's durability.
+* Objects can be from 0 bytes to 5TB
+* Objects are like files
